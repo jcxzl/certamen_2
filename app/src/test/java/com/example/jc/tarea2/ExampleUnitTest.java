@@ -1,4 +1,4 @@
-package com.example.jc.certamen2;
+package com.example.jc.tarea2;
 
 import org.junit.Test;
 
