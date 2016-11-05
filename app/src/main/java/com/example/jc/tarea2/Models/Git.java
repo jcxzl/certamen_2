@@ -5,12 +5,21 @@ package com.example.jc.tarea2.Models;
  */
 
 public class Git {
-    private String nombre, descripcion, actualizacion;
+    private String nombre, descripcion, actualizacion, url;
 
-    public Git(String nombre, String descripcion, String actualizacion){
+    public Git(String nombre, String descripcion, String actualizacion, String url){
         this.setActualizacion(actualizacion);
         this.setDescripcion(descripcion);
         this.setNombre(nombre);
+        this.setUrl(url);
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     public String getActualizacion() {

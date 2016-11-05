@@ -36,7 +36,7 @@ public class GitInteractorImpl implements GitInteractor{
             array = new ArrayList<Git>();
         }
         try {
-            array.add(new Git(jsonObject.getString("name"), jsonObject.getString("description"), jsonObject.getString("updated_at")));
+            array.add(new Git(jsonObject.getString("name"), jsonObject.getString("description"), jsonObject.getString("updated_at"), jsonObject.getString("html_url")));
         } catch (JSONException e) {
             e.printStackTrace();
         }

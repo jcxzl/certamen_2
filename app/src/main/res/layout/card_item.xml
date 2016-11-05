@@ -7,6 +7,7 @@
     android:layout_marginTop="12dp"
     android:layout_marginLeft="12dp"
     android:layout_marginRight="12dp"
+    android:id="@+id/linear"
     >
 
     <TextView
@@ -38,6 +39,14 @@
         android:layout_alignParentTop="true"
         android:layout_below="@+id/nombre"
         android:layout_toEndOf="@+id/nombre" />
+
+    <Button
+        android:text="Ir"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:id="@+id/button2"
+        />
 
     <TextView
         android:layout_width = "match_parent"
