@@ -10,6 +10,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.jc.tarea2.Models.Git;
 import com.example.jc.tarea2.Interfaces.GitInteractor;
 import com.example.jc.tarea2.MySingleton;
+import com.example.jc.tarea2.Views.GitList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,7 +51,7 @@ public class GitInteractorImpl implements GitInteractor{
     }
 
     @Override
-    public ArrayList<Git> getList(String json_url) {
+    public void getList(final GitList view, String json_url) {
         JsonArrayRequest jsonArrayRequest;
         jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, json_url , (String)null,
                 new Response.Listener<JSONArray>() {
@@ -69,6 +70,7 @@ public class GitInteractorImpl implements GitInteractor{
                         }
 
                         setArrayList(arrayList1);
+                        view.showData(arrayList1);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -81,7 +83,6 @@ public class GitInteractorImpl implements GitInteractor{
         );
 
         MySingleton.getInstance(context).addToRequestque(jsonArrayRequest);
-        return  arrayList;
     }
 
 

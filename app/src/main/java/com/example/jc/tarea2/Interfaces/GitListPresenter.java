@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.android.volley.RequestQueue;
 import com.example.jc.tarea2.Models.Git;
+import com.example.jc.tarea2.Views.GitList;
 
 import java.util.ArrayList;
 
@@ -13,5 +14,5 @@ import java.util.ArrayList;
  */
 
 public interface GitListPresenter {
-    public ArrayList<Git> getList(String user);
+    void getList(String user);
 }
