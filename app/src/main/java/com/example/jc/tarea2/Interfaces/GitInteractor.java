@@ -1,6 +1,7 @@
 package com.example.jc.tarea2.Interfaces;
 
 import com.example.jc.tarea2.Models.Git;
+import com.example.jc.tarea2.Views.GitList;
 
 import org.json.JSONObject;
 
@@ -15,5 +16,5 @@ public interface GitInteractor {
 
     public void setArrayList(ArrayList<Git> List);
 
-    public ArrayList<Git> getList(String json_url);
+    public void getList(GitList view, String json_url);
 }

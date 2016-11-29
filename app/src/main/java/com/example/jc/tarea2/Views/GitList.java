@@ -48,12 +48,7 @@ public class GitList extends AppCompatActivity implements GitListView {
         recyclerView.setLayoutManager(layoutManager);
 
         GitListPresenter gitListPresenter = new GitListPresenterImpl(this, GitList.this);
-        arrayList = gitListPresenter.getList(user);
-        adapter = new RecyclerAdapter(arrayList);
-        recyclerView.setAdapter(adapter);
-        ArrayList arra = new ArrayList<Git>();
-        adapter = new RecyclerAdapter(arrayList);
-        recyclerView.setAdapter(adapter);
+        gitListPresenter.getList(user);
     }
 
     public  void seter(ArrayList<Git> arrayList){
@@ -62,5 +57,17 @@ public class GitList extends AppCompatActivity implements GitListView {
 
     public void getBack(){
         startActivity(new Intent(GitList.this, MainActivity.class));
+    }
+
+    @Override
+    public void showData(ArrayList<Git> arrayList) {
+        adapter = new RecyclerAdapter(arrayList, this);
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void showWebView(String url) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
     }
 }

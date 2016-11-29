@@ -32,9 +32,9 @@ public class GitListPresenterImpl implements GitListPresenter {
     }
 
     @Override
-    public ArrayList<Git> getList(String user){
+    public void getList(String user){
         String json_url = "https://api.github.com/users/"+user+"/repos";
-        return gitInteractor.getList(json_url);
+        gitInteractor.getList(view, json_url);
     }
 
 
